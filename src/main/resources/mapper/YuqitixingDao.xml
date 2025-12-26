@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.YuqitixingDao">
+
+	<!-- 可根据自己的需求，SURE要使用 -->
+    <resultMap type="com.entity.YuqitixingEntity" id="yuqitixingMap">
+        <result property="shebeibianhao" column="shebeibianhao"/>
+        <result property="shebeimingcheng" column="shebeimingcheng"/>
+        <result property="shebeifenlei" column="shebeifenlei"/>
+        <result property="shebeifengmian" column="shebeifengmian"/>
+        <result property="jiechushuliang" column="jiechushuliang"/>
+        <result property="keyongshuliang" column="keyongshuliang"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="leixing" column="leixing"/>
+        <result property="tixingshijian" column="tixingshijian"/>
+        <result property="yuqitixing" column="yuqitixing"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YuqitixingVO" >
+		SELECT * FROM yuqitixing  yuqitixing         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YuqitixingVO" >
+		SELECT  yuqitixing.* FROM yuqitixing  yuqitixing 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YuqitixingView" >
+
+		SELECT  yuqitixing.* FROM yuqitixing  yuqitixing 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YuqitixingView" >
+		SELECT * FROM yuqitixing  yuqitixing <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>

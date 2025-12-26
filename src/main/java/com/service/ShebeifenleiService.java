@@ -1,0 +1,38 @@
+package com.service;
+
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.service.IService;
+import com.utils.PageUtils;
+import com.entity.ShebeifenleiEntity;
+import java.util.List;
+import java.util.Map;
+import com.entity.vo.ShebeifenleiVO;
+import org.apache.ibatis.annotations.Param;
+import com.entity.view.ShebeifenleiView;
+
+
+/**
+ * E-Type
+ *
+ * @author 
+ * @email 
+ * @date 2025-11-28 16:57:44
+ */
+public interface ShebeifenleiService extends IService<ShebeifenleiEntity> {
+
+    PageUtils queryPage(Map<String, Object> params);
+    
+   	List<ShebeifenleiVO> selectListVO(Wrapper<ShebeifenleiEntity> wrapper);
+   	
+   	ShebeifenleiVO selectVO(@Param("ew") Wrapper<ShebeifenleiEntity> wrapper);
+   	
+   	List<ShebeifenleiView> selectListView(Wrapper<ShebeifenleiEntity> wrapper);
+   	
+   	ShebeifenleiView selectView(@Param("ew") Wrapper<ShebeifenleiEntity> wrapper);
+   	
+   	PageUtils queryPage(Map<String, Object> params,Wrapper<ShebeifenleiEntity> wrapper);
+
+   	
+
+}
+
